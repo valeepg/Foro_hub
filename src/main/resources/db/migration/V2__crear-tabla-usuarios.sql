@@ -1,0 +1,9 @@
+CREATE TABLE usuarios (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    contrasena VARCHAR(100) NOT NULL,
+    perfil_id BIGINT NOT NULL,
+    activo BOOLEAN NOT NULL DEFAULT TRUE,
+    FOREIGN KEY (perfil_id) REFERENCES perfiles(id)
+);
